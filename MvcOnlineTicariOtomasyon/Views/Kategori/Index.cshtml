@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+<h1>Kategoriler</h1>
 <table class="table table-bordered mx-4" style="margin-top:20px">
     <tr>
         <th>ID</th>
         <th>Kategori Adı</th>
-        <th>Sil</th> 
+        <th>Sil</th>
         <th>Güncelle</th>
     </tr>
     @foreach (var k in Model)
@@ -23,16 +23,17 @@
                 @k.KategoriAd
             </td>
             <td>
-                <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a>
+                <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger"><i class="fa fa-trash"></i>Sil</a>
             </td>
             <td>
-                <a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a>
+                <a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success"><i class="fa fa-undo"></i>Güncelle</a>
             </td>
 
-        </tr> 
+        </tr>
+
     }
 
 
 </table>
-<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+<a href="/Kategori/KategoriEkle" class="btn btn-primary"><i class="fa fa-plus"></i> Kategori Ekle</a>
 

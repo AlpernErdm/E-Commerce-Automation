@@ -56,5 +56,60 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
 
         }
+        public ActionResult SatisGetir(int id)
+        {
+            var satis = c.SatisHarekets.Find(id);
+
+            List<SelectListItem> urunler = (from x in c.Uruns.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.UrunAd,
+                                                Value = x.UrunId.ToString()
+                                            }).ToList();
+            List<SelectListItem> cariler = (from x in c.Carilers.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.CariAd + " " + x.CariSoyad,
+                                                Value = x.Cariid.ToString()
+                                            }).ToList();
+            List<SelectListItem> personeller = (from x in c.Personels.ToList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                                    Value = x.PersonelId.ToString()
+                                                }).ToList();
+            ViewBag.urun = urunler;
+            ViewBag.cari = cariler;
+            ViewBag.personel = personeller;
+
+
+            return View("SatisGetir", satis);
+        }
+        public ActionResult SatisGuncelle(SatisHareket s)
+        {
+            var sts = c.SatisHarekets.Find(s.Satisİd);
+
+            sts.Cariid = s.Cariid;
+            sts.Personelid = s.Personelid;
+            sts.Urunid = s.Urunid;
+            sts.Adet = s.Adet;
+            sts.Fiyat = s.Fiyat;
+            sts.ToplamTutar = s.ToplamTutar;
+
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult SatisDetay(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.Satisİd == id).ToList();
+            return View(degerler);
+        }
+
+        public ActionResult SatisListesi()
+        {
+            var satislar = c.SatisHarekets.ToList();
+            return View(satislar);
+        }
     }
 }

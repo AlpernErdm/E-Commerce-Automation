@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <br />
-<table class="table table table-bordered mx-4 mx-4">
+<h2>Satışlar</h2>
+<table id="tbl1" class="table table table-bordered mx-4 mx-4">
     <tr>
         <th>ID</th>
         <th>ÜRÜN</th>
@@ -15,23 +16,39 @@
         <th>SATIŞ FİYAT</th>
         <th>KATEGORİ</th>
         <th>GÖRSEL</th>
-        <th>SİL</th>
+        <th>İŞLEMLER</th>
+
     </tr>
     @foreach (var u in Model)
     {
-<tr> 
-    <td>@u.UrunId</td>
-    <td>@u.UrunAd</td>
-    <td>@u.Marka</td>
-    <td>@u.Stok</td>
-    <td>@u.AlisFiyat</td>
-    <td>@u.SatisFiyat</td>
-    <td>@u.Kategori.KategoriAd</td>
-    <td>@u.UrunGorsel</td>
-    <td><a href="/Urun/UrunSil/@u.UrunId " class="btn btn-danger">Sil</a></td>
-    <td><a href="/Urun/UrunGetir/@u.UrunId " class="btn btn-success">Güncelle</a></td>
-</tr>
+        <tr>
+            <td>@u.UrunId</td>
+            <td>@u.UrunAd</td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlisFiyat</td>
+            <td>@u.SatisFiyat</td>
+            <td>@u.Kategori.KategoriAd</td>
+            <td>@u.UrunGorsel</td>
+            <td><a href="/Urun/UrunSil/@u.UrunId " class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a> <a href="/Urun/UrunGetir/@u.UrunId " class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
+
+        </tr>
     }
 </table>
-<a href="/Urun/YeniUrun/" class="btn btn-info" >Yeni Ürün  </a>
+<a href="/Urun/YeniUrun/" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni Ürün Ekle</a>
+@*<a href="/Urun/UrunListesi/" class="btn btn-info"><i class="fa fa-print"></i> Yazdır</a>*@
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
 

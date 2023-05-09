@@ -4,41 +4,45 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<h2 style="margin-top:20px">Personeller</h2>
+
 <table class="table table-bordered mx-4" style="margin-top:20px">
-    <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Görsel</th>
-        <th>Departman *burda hata alıyorum*</th>
-        <th>Güncelle</th>
-        <th>Satışlar</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Görsel</th>
+            <th>Departman</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
-<tr>
+        <tr>
 
-    <td>  @k.PersonelId</td>
-    <td>  @k.PersonelAd </td>
-    <td>  @k.PersonelSoyad </td>
-    <td>  @k.PersonelGorsel </td>
-    <td>  @k.PersonelAd </td>
-    @*<td>@k.Departman.DepartmanAd</td>*@
+            <td>  @k.PersonelId</td>
+            <td>  @k.PersonelAd </td>
+            <td>  @k.PersonelSoyad </td>
+            <td>  @k.PersonelGorsel </td>
+            <td>  @k.PersonelAd </td>
+            @*<td>@k.Departman.DepartmanAd</td>*@
 
 
 
-    <td>
-        <a href="/Personel/PersonelGetir/@k.PersonelId" class="btn btn-warning">Güncelle</a>
-    </td>
-    <td>
-        <a href="/Departman/DepartmanPersonelSatis/@k.PersonelId" class="btn btn-success" style="background-color:lightcoral ;color:white"> Detaylar</a>
-    </td>
+            <td>
+                <a href="/Personel/PersonelGetir/@k.PersonelId" class="btn btn-warning"><i class="fa fa-undo"></i>Güncelle</a>
+                <a href="/Departman/DepartmanPersonelSatis/@k.PersonelId" class="btn btn-success" style="background-color:lightcoral ;color:white"><i class="fa fa-info-circle"></i> Detaylar</a>
+            </td>
 
-</tr>
+        </tr>
 
     }
 
 </table>
-<a href="/Personel/PersonelEkle" class="btn btn-info">Personel Ekle</a>
+<a href="/Personel/PersonelEkle" class="btn btn-primary"><i class="fa fa-plus"></i> Personel Ekle</a>
+<a href="/Personel/PersonelListesi" class="btn btn-info"><i class="fa fa-print"></i> Yazdır</a>
+
+
 
 

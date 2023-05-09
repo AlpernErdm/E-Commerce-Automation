@@ -26,10 +26,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [StringLength(60)]
         public string VergiDairesi { get; set; }
 
-        public string Saat { get; set; }
         [Column(TypeName = "char")] //Kısıtlamalar
         [StringLength(5)]
-  
+        public string Saat { get; set; }
+        [Column(TypeName = "char")] //Kısıtlamalar
+        [StringLength(30)]
         public string TeslimEden { get; set; }
 
         [Column(TypeName = "Varchar")] //Kısıtlamalar

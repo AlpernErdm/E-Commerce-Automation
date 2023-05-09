@@ -11,14 +11,14 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
     {
         [Key]
         public int FaturaKalemİd { get; set; }
+        public int Miktar { get; set; }
         [Column(TypeName = "Varchar")] //Kısıtlamalar
         [StringLength(100)]
-        public string Aciklama { get; set; }
-       
-        public int Miktar { get; set; }
-
+         public string Aciklama { get; set; }
+        
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
-        public  Faturalar Faturalar { get; set; }//sadece bir tane faturası olabilir Fatura Kalemi ile ilişkilendirdik
+        public int Faturaid { get; set; }
+        public  virtual Faturalar Faturalar { get; set; }//sadece bir tane faturası olabilir Fatura Kalemi ile ilişkilendirdik
     }
 }

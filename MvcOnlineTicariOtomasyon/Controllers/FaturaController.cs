@@ -56,26 +56,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(faturalar);
         }
 
-        //public ActionResult FaturaDetay(int id)
-        //{
-        //    var kalemler = c.FaturaKalems.Where(x => x.FaturaKalemİd == id).ToList();
-            
-        //    return View(kalemler);
+        public ActionResult FaturaDetay(int id)
+        {
+            var kalemler = c.FaturaKalems.Where(x => x.Faturaid == id).ToList();
 
-        //}
+            return View(kalemler);
 
-        //[HttpGet]
-        //public ActionResult FaturaKalemEkle()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult FaturaKalemEkle(FaturaKalem f)
-        //{
-        //    c.FaturaKalems.Add(f);
-        //    c.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        }
+
+        [HttpGet]
+        public ActionResult YeniKalem()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniKalem(FaturaKalem f)
+        {
+            c.FaturaKalems.Add(f);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 
-    }
+}

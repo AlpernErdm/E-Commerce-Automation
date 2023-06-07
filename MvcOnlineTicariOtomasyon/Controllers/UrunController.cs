@@ -70,7 +70,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             urn.Marka = p.Marka;
             urn.Stok = p.Stok;
             urn.UrunAd = p.UrunAd;
-            urn.UrunGorsel = p.UrunGorsel;
+          //  urn.UrunGorsel = p.UrunGorsel;
             c.SaveChanges();
             return RedirectToAction("Index");
 

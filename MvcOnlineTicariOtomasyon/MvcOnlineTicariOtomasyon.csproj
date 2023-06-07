@@ -156,6 +156,8 @@
     <Compile Include="Models\Siniflar\Kategori.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHareket.cs" />
+    <Compile Include="Models\Siniflar\SinifGrup.cs" />
+    <Compile Include="Models\Siniflar\SinifGrup2.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2845,6 +2847,9 @@
     <Content Include="thumber\images\ıphone_12.webp" />
     <Content Include="thumber\images\s23.webp" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
+    <Content Include="Views\istatistik\KolayTablolar.cshtml" />
+    <Content Include="Views\istatistik\Partial1.cshtml" />
+    <Content Include="Views\istatistik\Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

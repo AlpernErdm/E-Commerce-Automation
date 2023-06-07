@@ -22,7 +22,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger3 = c.Personels.Count().ToString();
             ViewBag.d3 = deger3;
 
-            var deger4 = c.Kategoris.Count().ToString();
+            var deger4 = c.Kategoris.Count().ToString(); 
             ViewBag.d4 = deger4;
 
             //var deger5 = c.Uruns.Sum(x => x.Stok).ToString();
@@ -64,6 +64,33 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             //ViewBag.d16 = deger16;
 
             return View();
+        }
+        public ActionResult KolayTablolar()
+        {
+            var sorgu = from x in c.Carilers
+                        group x by x.CariSehir into g
+                        select new SinifGrup
+                        {
+                            Sehir = g.Key,
+                            Sayi = g.Count()
+                        };
+            return View(sorgu.ToList());
+        }
+        public PartialViewResult Partial1()
+        {
+            var sorgu2 = from x in c.Personels
+                         group x by x.Departmanid into g
+                         select new SinifGrup2
+                         {
+                             Departman = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
+        }
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Carilers.ToList();
+            return PartialView(sorgu);
         }
     }
 }

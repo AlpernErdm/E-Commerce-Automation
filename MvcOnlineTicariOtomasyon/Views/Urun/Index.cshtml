@@ -8,14 +8,14 @@
 <h2>Satışlar</h2>
 <table id="tbl1" class="table table table-bordered mx-4 mx-4">
     <tr>
-        <th>ID</th>
+        <th>#</th>
         <th>ÜRÜN</th>
         <th>MARKA</th>
         <th>STOK</th>
         <th>ALIŞ FİYAT</th>
         <th>SATIŞ FİYAT</th>
         <th>KATEGORİ</th>
-        <th>GÖRSEL</th>
+        @*<th>GÖRSEL</th>*@
         <th>İŞLEMLER</th>
 
     </tr>
@@ -29,8 +29,9 @@
             <td>@u.AlisFiyat</td>
             <td>@u.SatisFiyat</td>
             <td>@u.Kategori.KategoriAd</td>
-            <td>@u.UrunGorsel</td>
-            <td><a href="/Urun/UrunSil/@u.UrunId " class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a> <a href="/Urun/UrunGetir/@u.UrunId " class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
+            @*<td>@u.UrunGorsel</td*@>
+            <td><a href="/Urun/UrunSil/@u.UrunId " class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a> <a href="/Urun/UrunGetir/@u.UrunId " class="btn btn-warning"><i class="fa fa-undo">
+                            </i> Güncelle</a>
 
         </tr>
     }

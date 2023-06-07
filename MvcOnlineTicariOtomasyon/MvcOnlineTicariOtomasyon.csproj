@@ -2161,6 +2161,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="photos\adem.PNG" />
+    <Content Include="photos\berat.PNG" />
+    <Content Include="photos\büşra.PNG" />
+    <Content Include="photos\dilsad.PNG" />
+    <Content Include="photos\enes.PNG" />
+    <Content Include="photos\fırat.PNG" />
+    <Content Include="photos\mehmet.PNG" />
+    <Content Include="photos\mertcan.PNG" />
+    <Content Include="photos\yusuf.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -2854,6 +2863,7 @@
     <Content Include="Views\istatistik\Partial2.cshtml" />
     <Content Include="Views\istatistik\Partial3.cshtml" />
     <Content Include="Views\istatistik\Partial4.cshtml" />
+    <Content Include="Views\Personel\PersonelListe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,5 @@
-This project consists of three main panels for a store: storefront, admin, and user panels. Specifically, the admin panel's dashboard focuses on creating a strong interface design along with going beyond basic 
-CRUD operations by utilizing SQL structures like Triggers and Stored Procedures through Entity Framework and LINQ queries. Upon completing this project, you will gain knowledge in the following areas:
+This project consists of three main panels for a store: storefront, admin, and user panels. Specifically, the admin panel's dashboard focuses on creating a strong interface design along with going beyond basic CRUD operations by utilizing SQL structures like Triggers and Stored Procedures through Entity Framework and LINQ queries. Upon completing this project, you will gain knowledge in the following areas:
+
 -ASP.Net MVC
 -Layout Management
 -Controller Structure
